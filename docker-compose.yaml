@@ -19,9 +19,11 @@ services:
     environment:
         - VNCPASS=jiz4oh
         - COMWECHAT=https://github.com/ljc545w/ComWeChatRobot/releases/download/3.7.0.30-0.1.0-pre/3.7.0.30-0.1.0-pre.zip
+    ports:
+        - "5905:5905"
     volumes:
         - "./comwechat/Files/:/home/user/.wine/drive_c/users/user/My Documents/WeChat Files/"
-        # - "./comwechat/Data/:/home/user/.wine/drive_c/users/user/Application Data/"
+        - "./comwechat/Data/:/home/user/.wine/drive_c/users/user/Application Data/"
         - ./run2.py:/run2.py
     command: /run2.py
     privileged: true
@@ -47,9 +49,11 @@ services:
     environment:
         - VNCPASS=jiz4oh
         - COMWECHAT=https://github.com/ljc545w/ComWeChatRobot/releases/download/3.7.0.30-0.1.0-pre/3.7.0.30-0.1.0-pre.zip
+    ports:
+        - "5906:5905"
     volumes:
         - "./comwechat/efb2/Files/:/home/user/.wine/drive_c/users/user/My Documents/WeChat Files/"
-        # - "./comwechat/Data/:/home/user/.wine/drive_c/users/user/Application Data/"
+        - "./comwechat/efb2/Data/:/home/user/.wine/drive_c/users/user/Application Data/"
         - ./run2.py:/run2.py
     command: /run2.py
     privileged: true
